@@ -64,7 +64,7 @@ export default function Home({ productData }) {
                 )}
           </div>
 
-          <div className="d-flex justify-content-center">
+          <div className="row">
             <ReactPaginate
               previousLabel={"<<"}
               nextLabel={">>"}
@@ -74,7 +74,7 @@ export default function Home({ productData }) {
               marginPagesDisplayed={2}
               pageRangeDisplayed={3}
               onPageChange={handlePageClick}
-              containerClassName={"pagination"}
+              containerClassName={"pagination d-flex justify-content-center"}
               activeClassName={"active"}
             />
           </div>
