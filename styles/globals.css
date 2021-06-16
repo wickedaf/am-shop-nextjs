@@ -14,3 +14,13 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.pagination li {
+  padding: 0.2rem;
+  margin: 0 0.8rem;
+}
+.pagination li:hover {
+  padding: 0.2rem;
+  background-color: tomato;
+}
+
