@@ -49,18 +49,10 @@ export default function Home({ productData }) {
           <div className="row d-flex justify-content-center flex-wrap">
             {pagedProduct.length > 0
               ? pagedProduct.map((product, index) =>
-                  product ? (
                     <Product key={index} product={product}></Product>
-                  ) : (
-                    `loading`
-                  )
                 )
               : productData.map((product, index) =>
-                  product ? (
                     <Product key={index} product={product}></Product>
-                  ) : (
-                    `loading`
-                  )
                 )}
           </div>
 

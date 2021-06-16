@@ -27,8 +27,8 @@ const NavBar = () => {
   return (
     <>
       <header className={`${styles.siteHeader} sticky-top`}>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-          <div class="container">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-transparent">
+          <div className="container">
             <a className="py-2 mx-4" href="#" aria-label="Product">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ const NavBar = () => {
               </svg>
             </a>
             <button
-              class="navbar-toggler"
+              className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
@@ -57,42 +57,42 @@ const NavBar = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav text-center mx-auto mb-2 mb-lg-0">
-                <li class="nav-item py-2">
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul className="navbar-nav text-center mx-auto mb-2 mb-lg-0">
+                <li className="nav-item py-2">
                   <a className="py-2 mx-4 d-md-inline-block" href="#">
                     Grocery
                   </a>
                 </li>
-                <li class="nav-item py-2">
+                <li className="nav-item py-2">
                   <a className="py-2 mx-4 d-md-inline-block" href="#">
                     Electronics
                   </a>
                 </li>
 
-                <li class="nav-item py-2">
+                <li className="nav-item py-2">
                   <a className="py-2 mx-4 d-md-inline-block" href="#">
                     Home & Lifestyle
                   </a>
                 </li>
-                <li class="nav-item py-2">
+                <li className="nav-item py-2">
                   <a className="py-2 mx-4 d-md-inline-block" href="#">
                     Fashion
                   </a>
                 </li>
-                <li class="nav-item py-2">
+                <li className="nav-item py-2">
                   <a className="py-2 mx-4 d-md-inline-block" href="#">
                     Accessories
                   </a>
                 </li>
-                <li class="nav-item py-2">
+                <li className="nav-item py-2">
                   <a className="py-2 mx-4 d-md-inline-block" href="#">
                     Automative & Motorbike
                   </a>
                 </li>
-                <li class="nav-item py-2">
+                <li className="nav-item py-2">
                   <a
                     onClick={
                       cartItems.length === 0

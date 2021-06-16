@@ -1,8 +1,9 @@
 import React from "react";
+import VerticalAlignTopIcon from '@material-ui/icons/VerticalAlignTop';
 
 const Footer = () => {
   return (
-    <footer className="container py-5">
+    <footer className="container pt-5">
       <div className="row">
         <div className="col-12 col-md">
           <svg
@@ -134,6 +135,15 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+      </div>
+      <div className="text-center">
+        <p class="text-center">
+          Copyright &copy; 2021 All rights reserved | Made with ❤ by 
+          <a className="text-decoration-none" target="_blank" href="http://linkedin.com/in/ishahriaremon"> Shahriar Emon</a>
+        </p>{" "}
+        <p>
+          <a href="#"><VerticalAlignTopIcon /></a>
+        </p>
       </div>
     </footer>
   );

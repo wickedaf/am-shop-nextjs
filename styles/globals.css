@@ -16,11 +16,14 @@ a {
 }
 
 .pagination li {
-  padding: 0.2rem;
+  padding: 0.7rem;
   margin: 0 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 50%;
 }
 .pagination li:hover {
-  padding: 0.2rem;
-  background-color: tomato;
+  padding: 0.7rem;
+  background-color: rgb(26, 26, 26);
+  color: white;
 }
 
