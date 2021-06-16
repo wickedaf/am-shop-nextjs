@@ -19,15 +19,15 @@ footer a {
   text-decoration: none;
 }
 
-.pagination li {
+.pagination li a{
   padding: 0.6rem;
-  margin: 0 0.5rem;
+  margin: 0 0.4rem;
   border: 1px solid transparent;
   border-radius: 50%;
 }
-.pagination li:hover {
+.pagination li a:hover {
   padding: 0.6rem;
   background-color: rgb(26, 26, 26);
-  color: white;
+  color: white !important;
 }
 

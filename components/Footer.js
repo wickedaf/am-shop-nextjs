@@ -137,7 +137,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-center">
-        <p class="text-center">
+        <p className="text-center">
           Copyright &copy; 2021 All rights reserved | Made with ❤ by 
           <a className="text-decoration-none" target="_blank" href="http://linkedin.com/in/ishahriaremon"> Shahriar Emon</a>
         </p>{" "}

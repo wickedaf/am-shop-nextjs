@@ -66,7 +66,7 @@ export default function Home({ productData }) {
               marginPagesDisplayed={1}
               pageRangeDisplayed={2}
               onPageChange={handlePageClick}
-              containerClassName={"pagination d-flex justify-content-center"}
+              containerClassName={"pagination py-5 d-flex justify-content-center"}
               activeClassName={"active"}
             />
           </div>
