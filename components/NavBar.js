@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import dynamic from "next/dynamic";
 import { useSelector } from "react-redux";
+import Swal from 'sweetalert2'
 
 
 
@@ -21,16 +22,17 @@ const NavBar = () => {
     setDrawerState(state);
   };
 
-  const cartItemsCount = useSelector((state) => {
+  const cartItems = useSelector((state) => {
     return state.reducer.cartItem;
   })
-  console.log(cartItemsCount);
+
 
   return (
     <>
-      <header className={`${styles.siteHeader} sticky-top py-1`}>
-        <nav className="container d-flex flex-column flex-md-row justify-content-between">
-          <a className="py-2" href="#" aria-label="Product">
+      <header className={`${styles.siteHeader} sticky-top`}>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+  <a className="py-2 mx-4" href="#" aria-label="Product">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -49,33 +51,57 @@ const NavBar = () => {
               <path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94" />
             </svg>
           </a>
-          <a className="py-2 d-none d-md-inline-block" href="#">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+        <a className="py-2 mx-4 d-none d-md-inline-block" href="#">
             Grocery
           </a>
-          <a className="py-2 d-none d-md-inline-block" href="#">
+        </li>
+        <li class="nav-item">
+        <a className="py-2 mx-4 d-none d-md-inline-block" href="#">
             Electronics
           </a>
-          <a className="py-2 d-none d-md-inline-block" href="#">
+        </li>
+        
+        <li class="nav-item">
+        <a className="py-2 mx-4 d-none d-md-inline-block" href="#">
             Home & Lifestyle
           </a>
-          <a className="py-2 d-none d-md-inline-block" href="#">
+        </li>
+        <li class="nav-item">
+        <a className="py-2 mx-4 d-none d-md-inline-block" href="#">
             Fashion
           </a>
-          <a className="py-2 d-none d-md-inline-block" href="#">
+        </li>
+        <li class="nav-item">
+        <a className="py-2 mx-4 d-none d-md-inline-block" href="#">
             Accessories
           </a>
-          <a className="py-2 d-none d-md-inline-block" href="#">
+        </li>
+        <li class="nav-item">
+        <a className="py-2 mx-4 d-none d-md-inline-block" href="#">
             Automative & Motorbike
           </a>
-          <a
-            onClick={toggleDrawer(true)}
-            className="py-2 d-none d-md-inline-block"
+        </li>
+        <li class="nav-item">
+        <a
+            onClick={cartItems.length === 0 ? () => <>{Swal.fire('Oops', 'There is not item in your cart', 'error')}</> :toggleDrawer(true)}
+            className="py-2 mx-4 d-none d-md-inline-block"
           >
-            <ShoppingCartIcon /> <span>{cartItemsCount.length}</span>
+            <ShoppingCartIcon /> <span>{cartItems.length}</span>
           </a>
-        </nav>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
       </header>
-      <CartDrawerDynamic toggleDrawer={toggleDrawer} drawerState={drawerState} ></CartDrawerDynamic>
+      <CartDrawerDynamic toggleDrawer={toggleDrawer} drawerState={drawerState} cartItems={cartItems} ></CartDrawerDynamic>
     </>
   );
 };

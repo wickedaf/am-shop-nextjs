@@ -1,26 +1,34 @@
 import React from "react";
-import Drawer from '@material-ui/core/Drawer';
+import Drawer from "@material-ui/core/Drawer";
+import { useSelector } from "react-redux";
+import List from "@material-ui/core/List";
 
-const CartDrawer = ({ toggleDrawer, drawerState }) => {
+
+
+const CartDrawer = ({ toggleDrawer, drawerState, cartItems }) => {
+  const cartItemsCount = useSelector((state) => {
+    return [state.reducer.cartItem];
+  });
+
+  console.log(cartItems);
+
   return (
-    <Drawer
-      anchor='right'
-      open={drawerState}
-      onClose={toggleDrawer(false)}
-    >
-      <div class="card" style={{width: "18rem"}}>
-        <img src="..." class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <a href="#" class="btn btn-primary">
-            Go somewhere
-          </a>
+    <Drawer anchor="right" open={drawerState} onClose={toggleDrawer(false)}>
+      <List>
+      {cartItems.map((item, index) => 
+        <div className="px-3">
+          <div key={index} classNam="card border" style={{ width: "18rem" }}>
+            <div classNam="card-body">
+              <h5 classNam="card-title">{item.name}</h5>
+              <p classNam="card-text">
+                {item.mrp} BDT
+              </p>
+            </div>
+          </div>
+          <hr />
         </div>
-      </div>
+      )}
+      </List>
     </Drawer>
   );
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 const Product = ({product}) => {
   const dispatch = useDispatch();
@@ -23,11 +24,14 @@ const cartItems = useSelector((state) => {
       />
       <div className="card-body">
         <h5 className="card-title">{product.name}</h5>
-        <p className="card-text">{product.description?.substr(0, 100) || `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}</p>
-        <a onClick={ () =>handleAddToCart(product)} className="btn btn-primary">
-          Add to cart
-        </a>
+        {/* <p className="card-text">{product.description?.substr(0, 100) || `Lorem Ipsum is simply dummy text of the printing and typesetting industry.`}</p> */}
+        
       </div>
+      <div className="card-footer bg-white">
+      <a onClick={ () =>handleAddToCart(product)} className="btn rounded-circle">
+          <AddShoppingCartIcon />
+        </a>
+  </div>
     </div>
   );
 };
